@@ -1,0 +1,37 @@
+<assembly>
+    <id>bin</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <fileSets>
+        <!-- 从目标目录拷贝文件去压缩 -->
+        <fileSet>
+            <directory>target</directory>
+            <includes>
+                <include>*.jar</include>
+            </includes>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>target/lib</directory>
+            <outputDirectory>/lib</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>target/config</directory>
+            <outputDirectory>/config</outputDirectory>
+        </fileSet>
+
+        <!-- 从源目录拷贝文件去压缩 -->
+        <fileSet>
+            <directory>src/main/run</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main</directory>
+            <includes>
+                <include>ReadMe.txt</include>
+            </includes>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>
