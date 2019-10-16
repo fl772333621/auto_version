@@ -25,8 +25,9 @@ public class AutoVersion {
         String sourcePath = getSourcePath();
         File sourceFile = new File(sourcePath);
         String backupPath = getBackupPath(sourceFile);
-        backup(sourceFile, sourcePath, backupPath, SDF.format(new Date()));
-        checkDelete(new File(backupPath), sourcePath, backupPath, SDF.format(new Date()));
+        String time = SDF.format(new Date());
+        backup(sourceFile, sourcePath, backupPath, time);
+        checkDelete(new File(backupPath), sourcePath, backupPath, time);
     }
 
     protected static String getSourcePath() throws Exception {
